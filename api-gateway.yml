@@ -39,9 +39,9 @@ server:
   port: 5555
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: mysecretkey123456
 
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URL}
+      defaultZone: http://localhost:8761/eureka/
