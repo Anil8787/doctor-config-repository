@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: booking-service
+
+  datasource:
+    url: ${BOOKING_DB_URL}
+
+server:
+  port: 8083

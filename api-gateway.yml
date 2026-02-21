@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: doctor-service
+          uri: lb://doctor-service
+          predicates:
+            - Path=/api/v1/doctor/**
+
+        - id: patient-service
+          uri: lb://patient-service
+          predicates:
+            - Path=/api/v1/patient/**
+
+        - id: booking-service
+          uri: lb://booking-service
+          predicates:
+            - Path=/api/v1/booking/**
+
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/product/v1/**
+
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/v1/auth/**
+
+        - id: auth-service-admin
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/v1/admin/**
+
+server:
+  port: 5555
+
+jwt:
+  secret: ${JWT_SECRET}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}

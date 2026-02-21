@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: patient-service
+
+  datasource:
+    url: ${PATIENT_DB_URL}
+
+server:
+  port: 8082

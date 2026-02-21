@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: payment-service
+
+  datasource:
+    url: ${PAYMENT_DB_URL}
+
+server:
+  port: 8084
+
+stripe:
+  secret-key: ${STRIPE_SECRET_KEY}

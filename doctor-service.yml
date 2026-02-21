@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: doctor-service
+
+  datasource:
+    url: ${DOCTOR_DB_URL}
+
+server:
+  port: 8081
