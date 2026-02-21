@@ -3,7 +3,25 @@ spring:
     name: booking-service
 
   datasource:
-    url: ${BOOKING_DB_URL}
+    url: jdbc:mysql://localhost:3306/doctor_booking_db
+    username: root
+    password: Anil@5454
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
 
 server:
-  port: 8083
+  port: 8083  # you can change it if needed
+
+jwt:
+  secret: mysecretkey123456
+  expiration_time: 86400000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
