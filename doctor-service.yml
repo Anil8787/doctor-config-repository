@@ -3,22 +3,25 @@ spring:
     name: doctor-service
 
   datasource:
-    url: ${DOCTOR_DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/doctor_db
+    username: root
+    password: Anil@5454
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  config:
-    import: optional:configserver:http://localhost:8888
-
-jwt:
-  secret: ${JWT_SECRET}
-  expiration_time: ${JWT_EXPIRATION_TIME}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
 
 server:
   port: 8081
 
+jwt:
+  secret: mysecretkey123456
+  expiration_time: 86400000
+
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URL}
+      defaultZone: http://localhost:8761/eureka/
