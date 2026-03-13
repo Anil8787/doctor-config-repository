@@ -18,7 +18,7 @@ server:
   port: 8082
 
 jwt:
-  secret: patientsecret123
+  secret: mysecretkey123456
   expiration_time: 86400000
 
 eureka:
