@@ -1,6 +1,6 @@
 spring:
   application:
-    name: medicine-service
+    name: medicine-order-service
 
   datasource:
     url: jdbc:mysql://localhost:3306/medicine_service
